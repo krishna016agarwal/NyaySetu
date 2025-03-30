@@ -1,0 +1,169 @@
+body {
+  background: linear-gradient(to right, #0a1d56, #6a0dad);
+  /* Adjust colors to match the exact gradient */
+  min-height: 100vh;
+  margin: 0;
+  font-family: "ui-sans-serif", system-ui, sans-serif;
+}
+.main {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin: auto;
+  align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: white;
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 2rem;
+    padding: 3rem 5rem;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      justify-content: center;
+
+      .title {
+        font-size: 3rem; /* Adjust as needed */
+        font-weight: bold;
+        text-transform: uppercase;
+
+        background: linear-gradient(to right, #9333ea, #3b82f6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent !important;
+
+        display: inline-block; /* Ensures proper background rendering */
+      }
+    }
+    .section {
+      display: flex;
+      .left {
+        input {
+          background-color: transparent;
+          padding: 1rem;
+          border: 0.1rem solid #9333ea;
+          border-radius: 0.4rem;
+          color: black;
+          width: 100%;
+          margin-bottom: 10px;
+          font-size: 1rem;
+          outline: none;
+        }
+      }
+      .right {
+        margin-left: 10px;
+        input {
+          width: 100%;
+          background-color: transparent;
+          padding: 1rem;
+          border: 0.1rem solid #9333ea;
+          border-radius: 0.4rem;
+          color: black;
+          margin-bottom: 10px;
+          font-size: 1rem;
+          outline: none;
+        }
+      }
+    }
+
+    button {
+      background-color: #7c3bed;
+      color: rgb(255, 255, 255);
+      padding: 1rem 2rem;
+      cursor: pointer;
+      border: none;
+
+      font-weight: bold;
+      border-radius: 0.4rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: #9333ea;
+      }
+    }
+    span {
+      color: #9333ea;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+      a {
+        color: #0082df;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 745px) {
+  form {
+    padding: 3rem 5rem !important;
+  }
+  .main {
+    height: 100vh;
+    width: 90vw;
+  }
+}
+@media screen and (max-width: 625px) {
+  form {
+    padding: 3rem 5rem !important;
+    overflow-y: auto;
+    /* Target the scrollbar */
+
+    .section{
+      display: block !important;
+      .right{
+        margin-left: 0px !important;
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 5px;  /* Make it very thin */
+    height: 0px; /* Make it short */
+  }
+  
+  /* Scrollbar track (background) */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Scrollbar thumb (draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background: #bbbaba;
+    border-radius: 10px;
+  }
+  
+ 
+  .main {
+    height: 100vh;
+    width: 90vw;
+  }
+}
+@media screen and (max-width: 472px) {
+  form {
+    padding: 3rem 1rem !important;
+  }
+  .main {
+    height: 100vh;
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 362px) {
+  form {
+    padding: 3rem 0rem !important;
+  }
+  .main {
+    height: 100vh;
+    width: 30vw;
+  }
+}

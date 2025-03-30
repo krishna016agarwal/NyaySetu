@@ -1,0 +1,40 @@
+.main{
+    display: flex;
+    flex-wrap: wrap;
+  padding: 25px;
+  gap:5rem
+}
+span2{
+    display: flex;
+    justify-content: center;
+    font-size:xx-large;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.main2{
+  display: flex;
+  justify-content: center;
+  height: 30rem;
+  align-items: center;
+  span3{
+    background-color: 	#ffffff;
+    border-radius: 15px;
+    margin-top: 5px;
+    min-width: 20%;
+    margin: 20px;
+    height:20rem;
+    font-size: larger;
+    padding: 8px;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 10, 0.1); ;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    align-items: center;
+  color:	#075e54;
+  
+  }
+  span3:hover{
+    transform: scale(1.1); /* Increase size on hover */
+  }
+}

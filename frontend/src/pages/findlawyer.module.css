@@ -1,0 +1,11 @@
+.main {
+   
+    flex-wrap: wrap; /* Ensures the cards wrap when needed */
+display: flex;
+
+   padding:10px;
+   height: 100%;
+    gap: 20px; /* Adds space between cards */
+}
+
+

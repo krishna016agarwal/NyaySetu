@@ -1,0 +1,140 @@
+
+body{
+    background: linear-gradient(to right, #0A1D56, #6A0DAD); 
+    /* Adjust colors to match the exact gradient */
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'ui-sans-serif', system-ui, sans-serif;
+}
+.main {
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin: auto;
+    align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: white;
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 2rem;
+    padding: 3rem 5rem;
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  
+    justify-content: center;
+    
+        
+            .title {
+                font-size: 3rem; /* Adjust as needed */
+                font-weight: bold;
+                text-transform: uppercase;
+               
+                background: linear-gradient(to right, #9333ea, #3b82f6);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent !important;
+                
+                display: inline-block; /* Ensures proper background rendering */
+            }
+            
+            
+        
+        
+    
+   
+  }
+  
+    input {
+      background-color: transparent;
+      padding: 1rem;
+      border: 0.1rem solid #9333ea;
+      border-radius: 0.4rem;
+      color: black;
+      
+      font-size: 1rem;
+      outline: none;
+    }
+    .select{
+         background-color: transparent;
+      padding: 1rem;
+      border: 0.1rem solid #9333ea;
+      border-radius: 0.4rem;
+      color: black;
+      
+      font-size: 1rem;
+      outline: none;
+    }
+    button {
+      background-color: #7C3BED;
+      color: rgb(255, 255, 255);
+      padding: 1rem 2rem;
+      cursor: pointer;
+      border: none;
+    
+      font-weight: bold;
+      border-radius: 0.4rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+     
+      &:hover {
+        background-color: #9333ea;
+      }
+    }
+    span {
+      color: #9333ea;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+      a {
+        color:#0082DF;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }}
+  
+  
+  @media screen and (max-width:650px) {
+    form{
+      padding: 3rem 1rem ;
+    }
+    .main {
+      height: 100vh;
+      width: 50vh;}
+  }
+  @media screen and (max-width:448px) {
+    form{
+      padding: 3rem 2rem !important ;
+    }
+    .main {
+      height: 100vh;
+      width: 35vh;}
+  }
+
+  @media screen and (max-width:350px) {
+    form{
+      padding: 3rem 1rem !important ;
+    }
+    .main {
+      height: 100vh;
+      width: 35vh;}
+  }
+
+  @media screen and (max-width:318px) {
+    form{
+      padding: 3rem 0.2rem !important ;
+    }
+    .main {
+      height: 100vh;
+      width: 35vh;}
+  }
+
+  

@@ -1,0 +1,109 @@
+.main{
+    border: 2px solid #87b4fc;
+    height: 550px;
+    max-width: 350px;
+    display: flex;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    flex-direction: column;
+    background-color: rgb(241, 241, 241);;
+    box-shadow: 0 4px 8px rgba(0, 0, 10, 0.1);
+    justify-content: space-between;
+    padding:15px;
+    .details{
+        display: flex;
+        justify-content: space-evenly;
+       background-color: rgb(255, 255, 255);
+      padding: 10px;
+        height: 80%;
+        box-shadow: 0 4px 8px rgba(0, 0, 10, 0.1);
+        border-radius: 15px;
+        flex-direction: column;
+        p{
+            font-weight: 500;  
+        }
+        m{
+            color:green;
+            font-size: larger;
+            font-weight: 500;
+        }
+    }
+    .status2{
+        background-color: 	rgb(255, 170, 170);
+        border-radius: 15px;
+        margin-top: 5px;
+        width: 100%;
+        font-size: larger;
+        padding: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 10, 0.1); ;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+color:rgb(248, 76, 76)
+
+    }
+    .status3{
+        background-color: 	#dcf8c6;
+        border-radius: 15px;
+        margin-top: 5px;
+        width: 100%;
+        font-size: larger;
+        padding: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 10, 0.1); ;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+color:	#075e54;
+
+    }
+    .status{
+        background-color: 	#ffffff;
+        border-radius: 15px;
+        margin-top: 10px;
+        width: 100%;
+        font-size: larger;
+        padding: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 10, 0.1); ;
+        display: flex;
+        justify-content: center;
+
+    }
+    .accept2{
+background-color: #dcf8c6;
+color:	#075e54;
+font-weight: 700
+    }
+    .reject2{
+background-color: rgb(255, 170, 170);
+font-weight: 700;
+color:rgb(220, 0, 0)
+    }
+    .button{
+        margin-top: 10px;
+        display: flex;
+       
+        justify-content: space-evenly;
+       
+        .reject{
+            background-color:  #3b82f6;
+            padding: 10px 20px;
+            border-radius: 18px;
+            border:none;
+            box-shadow: 0 4px 8px rgba(0, 0, 10, 0.1);
+            color:white
+           
+        } 
+        .accept{
+            background-color: #9333ea;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 10, 0.1);
+            color:white;
+            border-radius: 18px;
+            border:none
+          
+        } 
+    }
+}
+.main:hover{
+    transform: scale(1.04); /* Increase size on hover */   
+}
