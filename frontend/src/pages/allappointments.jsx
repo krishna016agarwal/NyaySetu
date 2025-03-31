@@ -41,7 +41,7 @@ const navigate=useNavigate()
     return (
         <>
         {lawyer ?(
-          <div className="flex gap-10 m-4 p-10 flex-wrap">
+          <div className="flex gap-10 mt-4 mb-4 flex-wrap">
                      { lawyer.map((e) => (
             <AppointmentCard prop={e} key={e._id} />
           ))}

@@ -1,8 +1,9 @@
 .main{
     display: flex;
     flex-wrap: wrap;
-  padding: 25px;
-  gap:5rem
+  padding: 0px;
+  gap:5rem;
+  margin: 10px 0px 20px 0px;
 }
 span2{
     display: flex;

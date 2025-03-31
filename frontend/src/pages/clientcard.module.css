@@ -119,3 +119,8 @@ color:rgb(220, 0, 0)
 .main:hover{
     transform: scale(1.04); /* Increase size on hover */   
 }
+@media screen and (max-width:300px) {
+ .main{
+    padding:5px !important
+ }   
+}

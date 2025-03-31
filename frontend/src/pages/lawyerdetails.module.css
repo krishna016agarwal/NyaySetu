@@ -160,7 +160,7 @@ body {
 }
 @media screen and (max-width: 362px) {
   form {
-    padding: 3rem 0rem !important;
+    padding: 3rem 1rem !important;
   }
   .main {
     height: 100vh;
