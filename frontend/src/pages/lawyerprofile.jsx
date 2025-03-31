@@ -73,7 +73,7 @@ const LawyerProfile = () => {
       registrationNumber,
       currentPosition
     } = state;
-console.log(state);
+
 
     const { data } = await axios.post(
       `${
@@ -158,7 +158,7 @@ console.log(state);
           {/* Contact Information */}
           <div className="mt-4 text-sm text-gray-700 space-y-2">
           <p>
-              <strong>Firm:</strong> {lawyer.lawFirm}
+              <strong> 🏬 Firm:</strong> {lawyer.lawFirm}
             </p>
             <p>
               <strong>📜 Education:</strong> {lawyer.Education}

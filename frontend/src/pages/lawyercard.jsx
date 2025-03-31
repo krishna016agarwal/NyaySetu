@@ -122,7 +122,7 @@ const randomReviews = getRandomReviews();
                 <p><strong>Experience:</strong> {props.experience} years</p>
                 <p><strong>Firm:</strong> {props.lawfirm}</p>
                
-                <p><strong>Consultation Fee:</strong> {props.fees}</p>
+                <p><strong>Consultation Fee:</strong> $50</p>
                 <p><strong>Education:</strong> {props.education}</p>
                 <p><strong>Contact No:</strong> {props.contact}</p>
                 <p><strong>Email:</strong> {props.email}</p>

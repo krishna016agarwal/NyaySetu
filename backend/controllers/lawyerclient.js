@@ -31,11 +31,7 @@ module.exports.appointment = async (req, res) => {
     }
    
     
-if (prop=="Cancel") {
 
- await Lawyerclients.findByIdAndDelete(id)
-  return res.json({ status: true});
-} else {
   const data = await Lawyerclients.findByIdAndUpdate(
     id, // ✅ Pass as a direct string, not as an object
     { status: prop },
@@ -46,7 +42,7 @@ if (prop=="Cancel") {
   }
   
   return res.json({ status: true, data });
-}
+
     
 
    

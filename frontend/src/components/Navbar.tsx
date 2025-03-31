@@ -8,16 +8,15 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-
   const client = localStorage.getItem("user")
-  ? JSON.parse(localStorage.getItem("user")!)
-  : null;
+    ? JSON.parse(localStorage.getItem("user")!)
+    : null;
+
   const handleLogout = () => {
-  
-    
     localStorage.removeItem("user");
     window.location.reload(); // Optional: Refresh the page after logout
-};
+  };
+
   const navItems = [
     { name: 'AI Bot', path: '/ai-bot' },
     { name: 'Find Lawyer', path: '/find-lawyer' },
@@ -26,10 +25,10 @@ const Navbar = () => {
     { name: 'Case Prediction', path: '/case-prediction' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    ...(client 
-      ? [{ name: 'Logout', onClick: handleLogout,path: '/signup' }] 
+    ...(client
+      ? [{ name: 'Logout', onClick: handleLogout, path: '/signup' }]
       : [{ name: 'Signup', path: '/signup' }]
-  )
+    ),
   ];
 
   useEffect(() => {
@@ -55,16 +54,14 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <motion.div 
+          {/* Logo */}
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
             <Link to="/" className="flex items-center space-x-2 group">
-              <motion.div
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
-              >
+              <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
                 <Scale className="h-8 w-8 text-primary-600 transition-colors duration-300 group-hover:text-secondary-500" />
               </motion.div>
               <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
@@ -74,7 +71,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.path;
               return (
@@ -88,14 +85,18 @@ const Navbar = () => {
                     to={item.path}
                     className="relative px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 group"
                   >
-                    <span className={`relative z-10 ${isActive ? 'text-white' : 'text-gray-700 group-hover:text-primary-600'}`}>
+                    <span
+                      className={`relative z-10 ${
+                        isActive ? 'text-white' : 'text-gray-700 group-hover:text-primary-600'
+                      }`}
+                    >
                       {item.name}
                     </span>
                     {isActive && (
                       <motion.div
                         layoutId="navbar-active"
                         className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-md"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                       />
                     )}
                   </Link>
@@ -105,7 +106,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
@@ -145,8 +146,8 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden overflow-hidden"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="lg:hidden overflow-hidden"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navItems.map((item, index) => {

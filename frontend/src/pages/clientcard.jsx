@@ -93,7 +93,7 @@ const InfoCard = ({
             </>
           )}
            {/* Show Cancel Appointment button if status is Accept */}
-  {status.toLowerCase() === "accept" && (
+  {/* {status.toLowerCase() === "accept" && (
     <button className={style.status2} onClick={() => handleSubmit("Cancel")}>
       Cancel Appointment
     </button>
@@ -102,7 +102,7 @@ const InfoCard = ({
     <button className={style.status3} onClick={() => handleSubmit("Cancel")}>
       Remove
     </button>
-  )}
+  )} */}
         </div>
         <ToastContainer />
       </div>

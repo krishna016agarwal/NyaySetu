@@ -1,6 +1,7 @@
 const { allappointments } = require("../controllers/allapointments");
 const { allclients } = require("../controllers/allclients");
 const { alllawyers } = require("../controllers/alllawyer");
+const { dashboard } = require("../controllers/dashboard");
 const { lawyerclient, appointment } = require("../controllers/lawyerclient");
 const { lawyerdetails, updatelawyer } = require("../controllers/lawyerdetails");
 const { lawyer } = require("../controllers/lawyersignup");
@@ -23,4 +24,5 @@ route.post("/lawyerupdate/:id",updatelawyer)
 route.get("/allclients/:id",allclients)
 route.post("/appointment",appointment)
 route.get("/allappointment/:id",allappointments)
+route.get("/dashboard",dashboard)
 module.exports=route;

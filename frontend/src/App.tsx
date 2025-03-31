@@ -16,6 +16,8 @@ import LawyerAppointments from "./pages/lawyerhome.jsx"
 import Footer from './components/Footer';
 import LawyerNavbar from "./pages/lawyernavbar.jsx"
 import LawyerProfile from "./pages/lawyerprofile.jsx"
+import Appointment from "./pages/allappointments.jsx"
+import Dashboard from "./pages/dashboard.jsx"
 
 function App() {
   const pageVariants = {
@@ -94,6 +96,7 @@ const user = JSON.parse(localStorage.getItem("user"));
           // User-specific routes
           <>
             <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard/>}></Route>
             <Route path="/ai-bot" element={<AIBot />} />
             <Route path="/find-lawyer" element={<FindLawyer />} />
             <Route path="/document-analysis" element={<DocumentAnalysis />} />
@@ -102,6 +105,7 @@ const user = JSON.parse(localStorage.getItem("user"));
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/allapointments" element={<Appointment />} />
             <Route path="/lawyerdetails" element={<Lawyerdetails />} />
           </>
         )}
