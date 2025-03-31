@@ -1,5 +1,6 @@
 const Lawyer = require("../models/lawyer");
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
+
 module.exports.lawyer = async (req, res) => {
   try {
     const {
