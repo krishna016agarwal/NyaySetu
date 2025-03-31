@@ -1,5 +1,5 @@
 const Lawyer = require("../models/lawyer");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 module.exports.lawyerlogin=async(req,res)=>{
     try {
         const {email,password}=req.body;
