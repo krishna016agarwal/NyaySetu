@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageSquare, Send, User, Bot, ChevronRight, Star, Quote } from 'lucide-react';
+import { MessageSquare, Send, User, Bot, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Message {
@@ -19,7 +19,27 @@ const suggestedQuestions = [
   "How do I file a consumer complaint?",
   "What's the process for divorce in India?",
   "How can I register a company?",
+  "How to apply for legal aid in India?",
+  "How can I report cybercrime in India?",
+  "What is an FIR and how to file it?"
 ];
+
+const legalQA: { [key: string]: string } = {
+  "What are my rights as a tenant?":
+    "As a tenant, you have the right to a habitable living space, protection from illegal eviction, fair rent, privacy, proper notice before eviction, and maintenance by the landlord.",
+  "How do I file a consumer complaint?":
+    "You can file a consumer complaint online via the E-Daakhil portal or offline by submitting a written complaint to the District Consumer Forum.",
+  "What's the process for divorce in India?":
+    "Divorce in India can be mutual or contested. File a petition under the Hindu Marriage Act, attend counseling, and follow the court process.",
+  "How can I register a company?":
+    "You can register a company online via the Ministry of Corporate Affairs portal. It includes obtaining a DSC, name approval, and filing the SPICe+ form.",
+  "How to apply for legal aid in India?":
+    "Apply through the District or State Legal Services Authority. Forms are available offline and on the NALSA website. Eligibility depends on income and case type.",
+  "How can I report cybercrime in India?":
+    "You can report cybercrime at https://cybercrime.gov.in or your nearest police station. Attach screenshots, transaction details, and any evidence.",
+  "What is an FIR and how to file it?":
+    "An FIR (First Information Report) initiates a criminal investigation. You can file it at the local police station where the crime occurred. It must be signed and acknowledged."
+};
 
 const AIBot = () => {
   const [messages, setMessages] = useState<Message[]>([
@@ -48,7 +68,10 @@ const AIBot = () => {
     setIsTyping(true);
 
     setTimeout(() => {
-      const botResponse = `Thank you for your question about \"${text}\". As an AI assistant, I can provide general legal information, but please note that this should not be considered legal advice.`;
+      const matchedAnswer = legalQA[text.trim()];
+      const botResponse = matchedAnswer ||
+        "Thank you for your query. Our AI is still learning and currently supports common legal topics. For complex matters, we recommend consulting a lawyer.";
+
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: botResponse,
@@ -78,7 +101,13 @@ const AIBot = () => {
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Suggested Questions</h2>
           <div className="space-y-3">
             {suggestedQuestions.map((question, index) => (
-              <motion.button key={index} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full text-left p-3 rounded-lg bg-gradient-to-r from-primary-50 to-secondary-50 hover:from-primary-100 hover:to-secondary-100 flex items-center justify-between group transition-all duration-300" onClick={() => handleQuestionClick(question)}>
+              <motion.button
+                key={index}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full text-left p-3 rounded-lg bg-gradient-to-r from-primary-50 to-secondary-50 hover:from-primary-100 hover:to-secondary-100 flex items-center justify-between group transition-all duration-300"
+                onClick={() => handleQuestionClick(question)}
+              >
                 <span className="text-sm text-gray-700">{question}</span>
                 <ChevronRight className="h-4 w-4 text-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
@@ -90,9 +119,19 @@ const AIBot = () => {
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
             <AnimatePresence>
               {messages.map((message) => (
-                <motion.div key={message.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className={`flex items-start space-x-3 ${message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
+                <motion.div
+                  key={message.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className={`flex items-start space-x-3 ${message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}
+                >
                   <div className={`flex items-center justify-center h-8 w-8 rounded-full ${message.sender === 'user' ? 'bg-primary-500' : 'bg-secondary-500'}`}>
-                    {message.sender === 'user' ? <User className="h-5 w-5 text-white" /> : <Bot className="h-5 w-5 text-white" />}
+                    {message.sender === 'user' ? (
+                      <User className="h-5 w-5 text-white" />
+                    ) : (
+                      <Bot className="h-5 w-5 text-white" />
+                    )}
                   </div>
                   <div className={`flex-1 rounded-2xl p-4 ${message.sender === 'user' ? 'bg-primary-500 text-white' : 'bg-gray-100 text-gray-900'}`}>
                     <p className="text-sm">{message.text}</p>
@@ -103,8 +142,21 @@ const AIBot = () => {
           </div>
           <div className="border-t border-gray-200 p-4">
             <form onSubmit={(e) => { e.preventDefault(); handleSendMessage(inputMessage); }} className="flex space-x-4">
-              <input type="text" value={inputMessage} onChange={(e) => setInputMessage(e.target.value)} placeholder="Type your legal question..." className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:outline-none" />
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} type="submit" className="bg-primary-500 text-white px-6 py-2 rounded-lg">Send</motion.button>
+              <input
+                type="text"
+                value={inputMessage}
+                onChange={(e) => setInputMessage(e.target.value)}
+                placeholder="Type your legal question..."
+                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:outline-none"
+              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                type="submit"
+                className="bg-primary-500 text-white px-6 py-2 rounded-lg"
+              >
+                Send
+              </motion.button>
             </form>
           </div>
         </div>
@@ -114,7 +166,13 @@ const AIBot = () => {
         <h2 className="text-xl font-semibold text-gray-900 mb-6">Previously Asked Questions</h2>
         <div className="space-y-6">
           {previousQuestions.map((item, index) => (
-            <motion.div key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: index * 0.1 }} className="border-l-4 border-primary-500 pl-4 py-2">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.1 }}
+              className="border-l-4 border-primary-500 pl-4 py-2"
+            >
               <h3 className="font-medium text-gray-900">{item.question}</h3>
               <p className="mt-2 text-sm text-gray-600">{item.answer}</p>
             </motion.div>
