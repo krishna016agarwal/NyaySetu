@@ -78,7 +78,7 @@ const randomReviews = getRandomReviews();
           : `/api/lawyerclient`
       }`,
       {
-        lawyer:props.id,client:clientId,caseType:props.field,date:new Date(Date.now()).toLocaleDateString(),status:"Pending",address:address,message:message,contact:contact,name:name,email:email
+        lawyer:props.id,client:clientId,caseType:props.field,date:(new Date(Date.now())).toLocaleDateString(),status:"Pending",address:address,message:message,contact:contact,name:name,email:email
       }
     );
   

@@ -1,12 +1,12 @@
 .card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
     max-width: 350px;
     margin: auto;
-    border: 2px solid #3b82f6;
+    
 }
 
 .avatar {
@@ -157,4 +157,7 @@
     .popupReviews p {
         font-size: 12px;
     }
+}
+.card:hover{
+    background:  #ebebeb
 }

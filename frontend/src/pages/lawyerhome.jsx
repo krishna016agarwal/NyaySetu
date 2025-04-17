@@ -27,6 +27,7 @@ const LawyerAppointments = () => {
   }, []);
 
   
+console.log(clients);
 
   return (
     <>
