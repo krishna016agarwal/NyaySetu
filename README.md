@@ -5,7 +5,7 @@ NyaySetu is an ⚖️ AI-powered legal consultancy platform developed during III
 Built with the 💻 MERN stack and integrated with advanced AI/ML tools 🧠, NyaySetu aims to become a 🛠️ one-stop legal solution for all. Whether it's finding the right legal support or verifying paperwork on the go, our mission is to bridge the gap between citizens and justice 🕊️ by providing fast, reliable, and user-friendly legal assistance.
 <br>
 <br>
-Check out here - <a href="https://nyaysetu-1.onrender.com/" > Website </a>
+Check out here - <a href="https://nyaysetu.onrender.com/" > Website </a>
 <br>
 <br>
 <img src="https://media.licdn.com/dms/image/v2/D4E22AQFouww32gpa5A/feedshare-shrink_2048_1536/B4EZXr8sm6GYAs-/0/1743420314247?e=1747872000&v=beta&t=JMKisklTds3WSTn7mdl2VZgzLMDslZ7x0QgdBArKrqE" ></img>
