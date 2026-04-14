@@ -7,6 +7,7 @@ const cors = require("cors");
 const port = process.env.PORT ||8000  
 const router=require("./routes/route.js")
 const path=require("path")
+
 app.use(cors({
   origin: "http://localhost:5173",
   methods: ["GET", "POST"],
