@@ -28,7 +28,7 @@ const InfoCard = ({
       `${
         import.meta.env.MODE === "development"
           ? `http://localhost:3000/api/appointment`
-          : `/api/appointment`
+          : `https://nyaysetu-1.onrender.com/api/appointment`
       }`,
       {
         prop,

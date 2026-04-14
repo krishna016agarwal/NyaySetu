@@ -65,7 +65,7 @@ export const Signup = () => {
         `${
           import.meta.env.MODE === "development"
             ? `http://localhost:3000/api/lawyersignup`
-            : `/api/lawyersignup`
+            : `https://nyaysetu-1.onrender.com/api/lawyersignup`
         }`,
         {
           password,
@@ -86,7 +86,7 @@ export const Signup = () => {
         `${
           import.meta.env.MODE === "development"
             ? `http://localhost:3000/api/usersignup`
-            : `/api/usersignup`
+            : `https://nyaysetu-1.onrender.com/api/usersignup`
         }`,
         {
           password,

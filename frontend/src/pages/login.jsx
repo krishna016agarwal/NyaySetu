@@ -43,7 +43,7 @@ navigate("/")
       const { password, email ,select} = state;
 if (select==="lawyer") {
   const { data } = await axios.post(
-    `${import.meta.env.MODE==="development" ? `http://localhost:3000/api/lawyerlogin` : `/api/lawyerlogin` }`
+    `${import.meta.env.MODE==="development" ? `http://localhost:3000/api/lawyerlogin` : `https://nyaysetu-1.onrender.com/api/lawyerlogin` }`
    , {
     password,
     email,
@@ -68,7 +68,7 @@ if (select==="lawyer") {
 
 } else {
   const { data } = await axios.post(
-    `${import.meta.env.MODE==="development" ? `http://localhost:3000/api/userlogin` : `/api/userlogin` }`
+    `${import.meta.env.MODE==="development" ? `http://localhost:3000/api/userlogin` : `https://nyaysetu-1.onrender.com/api/userlogin` }`
    , {
     password,
 email,

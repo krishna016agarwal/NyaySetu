@@ -7,7 +7,7 @@ const Dashboard = () => {
   async function fetchData() {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.MODE === "development" ? "http://localhost:3000/api/dashboard" : "/api/dashboard"}`
+        `${import.meta.env.MODE === "development" ? "http://localhost:3000/api/dashboard" : "https://nyaysetu-1.onrender.com/api/dashboard"}`
       );
       setDashboarddata(data);
     } catch (error) {

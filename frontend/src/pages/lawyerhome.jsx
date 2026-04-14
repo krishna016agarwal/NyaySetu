@@ -16,7 +16,7 @@ const LawyerAppointments = () => {
       `${
         import.meta.env.MODE === "development"
           ? `http://localhost:3000/api/allclients/${lawyer}`
-          : `/api/allclients/${lawyer}`
+          : `https://nyaysetu-1.onrender.com/api/allclients/${lawyer}`
       }`
     );
 

@@ -79,7 +79,7 @@ const LawyerProfile = () => {
       `${
         import.meta.env.MODE === "development"
           ? `http://localhost:3000/api/lawyerupdate/${lawyer._id}`
-          : `/api/lawyerupdate/${lawyer._id}`
+          : `https://nyaysetu-1.onrender.com/api/lawyerupdate/${lawyer._id}`
       }`,
       {
         name,

@@ -75,7 +75,7 @@ const randomReviews = getRandomReviews();
       `${
         import.meta.env.MODE === "development"
           ? `http://localhost:3000/api/lawyerclient`
-          : `/api/lawyerclient`
+          : `https://nyaysetu-1.onrender.com/api/lawyerclient`
       }`,
       {
         lawyer:props.id,client:clientId,caseType:props.field,date:(new Date(Date.now())).toLocaleDateString(),status:"Pending",address:address,message:message,contact:contact,name:name,email:email

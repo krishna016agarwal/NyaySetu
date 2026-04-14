@@ -50,7 +50,7 @@ export const Lawyerdetails = () => {
       `${
         import.meta.env.MODE === "development"
           ? `http://localhost:3000/api/lawyerdetails`
-          : `/api/lawyerdetails`
+          : `https://nyaysetu-1.onrender.com/api/lawyerdetails`
       }`,
       {
         email,

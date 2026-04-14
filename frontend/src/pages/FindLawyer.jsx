@@ -11,7 +11,7 @@ const FindLawyer = () => {
       `${
         import.meta.env.MODE === "development"
           ? `http://localhost:3000/api/alllawyers`
-          : `/api/alllawyers`
+          : `https://nyaysetu-1.onrender.com/api/alllawyers`
       }`
     );
  
