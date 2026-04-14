@@ -9,7 +9,7 @@ const router=require("./routes/route.js")
 const path=require("path")
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173","https://nyaysetu-1.onrender.com"],
   methods: ["GET", "POST"],
   credentials: true,
 }));
