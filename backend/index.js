@@ -9,7 +9,7 @@ const router=require("./routes/route.js")
 const path=require("path")
 
 app.use(cors({
-  origin: ["http://localhost:5173","https://nyaysetu-1.onrender.com"],
+  origin: ["http://localhost:5173","https://nyay-setu-flax.vercel.app"],
   methods: ["GET", "POST"],
   credentials: true,
 }));
